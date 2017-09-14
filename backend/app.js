@@ -70,6 +70,6 @@ app.delete('/starships/delete/:id', async (req, res, next) => {
 
 Promise.resolve()
   .then(() => db.open('./database.sqlite', { Promise }))
-  // .then(() => db.migrate({ force: 'last' }))
+  .then(() => db.migrate({ force: 'last' }))
   .catch(err => console.error(err.stack))
   .finally(() => app.listen(port))
